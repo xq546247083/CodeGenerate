@@ -36,10 +36,10 @@ namespace CodeGenerate
         /// </summary>   
         /// <param name="code">要执行的表达式</param>   
         /// <returns>运算结果</returns>   
-        static public int EvaluateToInteger(string code)
+        public static int EvaluateToInteger(string code)
         {
-            MyEvaluator eval = new MyEvaluator(typeof(int), code, MStaticMethodName);//生成 Evaluator 类的对像   
-            return (int)eval.Evaluate(MStaticMethodName);                        //执行并返回整型数据   
+            MyEvaluator eval = new MyEvaluator(typeof(int), code, MStaticMethodName);  
+            return (int)eval.Evaluate(MStaticMethodName);
         }
 
         /// <summary>   
@@ -47,9 +47,9 @@ namespace CodeGenerate
         /// </summary>   
         /// <param name="code">要执行的表达式</param>   
         /// <returns>执行结果</returns>   
-        static public double EvaluateToDouble(string code)
+        public static double EvaluateToDouble(string code)
         {
-            MyEvaluator eval = new MyEvaluator(typeof(double), code, MStaticMethodName);//生成 Evaluator 类的对像   
+            MyEvaluator eval = new MyEvaluator(typeof(double), code, MStaticMethodName);  
             return (double)eval.Evaluate(MStaticMethodName);
         }
 
@@ -58,9 +58,9 @@ namespace CodeGenerate
         /// </summary>   
         /// <param name="code">要执行的表达式</param>   
         /// <returns>执行结果</returns>   
-        static public long EvaluateToLong(string code)
+        public static long EvaluateToLong(string code)
         {
-            MyEvaluator eval = new MyEvaluator(typeof(long), code, MStaticMethodName);//生成 Evaluator 类的对像   
+            MyEvaluator eval = new MyEvaluator(typeof(long), code, MStaticMethodName);  
             return (long)eval.Evaluate(MStaticMethodName);
         }
 
@@ -69,9 +69,9 @@ namespace CodeGenerate
         /// </summary>   
         /// <param name="code">要执行的表达式</param>   
         /// <returns>执行结果</returns>   
-        static public decimal EvaluateToDecimal(string code)
+        public static decimal EvaluateToDecimal(string code)
         {
-            MyEvaluator eval = new MyEvaluator(typeof(decimal), code, MStaticMethodName);//生成 Evaluator 类的对像   
+            MyEvaluator eval = new MyEvaluator(typeof(decimal), code, MStaticMethodName);  
             return (decimal)eval.Evaluate(MStaticMethodName);
         }
 
@@ -80,10 +80,10 @@ namespace CodeGenerate
         /// </summary>   
         /// <param name="code">要执行的表达式</param>   
         /// <returns>运算结果</returns>   
-        static public string EvaluateToString(string code)
+        public static string EvaluateToString(string code)
         {
-            MyEvaluator eval = new MyEvaluator(typeof(string), code, MStaticMethodName);//生成 Evaluator 类的对像   
-            return (string)eval.Evaluate(MStaticMethodName);                     //执行并返回字符串型数据   
+            MyEvaluator eval = new MyEvaluator(typeof(string), code, MStaticMethodName);  
+            return (string)eval.Evaluate(MStaticMethodName);
         }
 
         /// <summary>   
@@ -91,10 +91,10 @@ namespace CodeGenerate
         /// </summary>   
         /// <param name="code">要执行的表达式</param>   
         /// <returns>运算结果</returns>   
-        static public bool EvaluateToBool(string code)
+        public static bool EvaluateToBool(string code)
         {
-            MyEvaluator eval = new MyEvaluator(typeof(bool), code, MStaticMethodName);//生成 Evaluator 类的对像   
-            return (bool)eval.Evaluate(MStaticMethodName);                       //执行并返回布尔型数据   
+            MyEvaluator eval = new MyEvaluator(typeof(bool), code, MStaticMethodName);  
+            return (bool)eval.Evaluate(MStaticMethodName);
         }
 
         /// <summary>   
@@ -102,10 +102,10 @@ namespace CodeGenerate
         /// </summary>   
         /// <param name="code">要执行的表达式</param>   
         /// <returns>运算结果</returns>   
-        static public object EvaluateToObject(string code)
+        public static object EvaluateToObject(string code)
         {
-            MyEvaluator eval = new MyEvaluator(typeof(object), code, MStaticMethodName);//生成 Evaluator 类的对像   
-            return eval.Evaluate(MStaticMethodName);                             //执行并返回 object 型数据   
+            MyEvaluator eval = new MyEvaluator(typeof(object), code, MStaticMethodName);  
+            return eval.Evaluate(MStaticMethodName);
         }
 
         #endregion

@@ -70,7 +70,7 @@ namespace CodeGenerate
             code.Append("using System.Data.OleDb; " + Environment.NewLine);
             code.Append("using System.Xml; " + Environment.NewLine);
 
-            code.Append("namespace CodeGenerate { " + Environment.NewLine);                  //生成代码的命名空间为EvalGuy，和本代码一样   
+            code.Append("namespace CodeGenerate { " + Environment.NewLine); 
 
             code.Append("  public class _Evaluator { " + Environment.NewLine);          //产生 _Evaluator 类，所有可执行代码均在此类中运行   
             foreach (EvaluatorItem item in items)               //遍历每一个可执行字符串项   
@@ -172,7 +172,7 @@ namespace CodeGenerate
         /// <returns>执行结果</returns>   
         public object Evaluate(string name)
         {
-            MethodInfo mi = mCompiled.GetType().GetMethod(name);//获取 _Compiled 所属类型中名称为 name 的方法的引用   
+            MethodInfo mi = mCompiled.GetType().GetMethod(name);//获取 mCompiled 所属类型中名称为 name 的方法的引用   
             return mi.Invoke(mCompiled, null);                  //执行 mi 所引用的方法   
         }
 
