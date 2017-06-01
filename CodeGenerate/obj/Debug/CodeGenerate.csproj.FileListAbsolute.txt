@@ -1,0 +1,6 @@
+c:\users\xq\documents\visual studio 2013\Projects\CodeGenerate\CodeGenerate\bin\Debug\CodeGenerate.exe.config
+c:\users\xq\documents\visual studio 2013\Projects\CodeGenerate\CodeGenerate\bin\Debug\CodeGenerate.exe
+c:\users\xq\documents\visual studio 2013\Projects\CodeGenerate\CodeGenerate\bin\Debug\CodeGenerate.pdb
+c:\users\xq\documents\visual studio 2013\Projects\CodeGenerate\CodeGenerate\obj\Debug\CodeGenerate.csprojResolveAssemblyReference.cache
+c:\users\xq\documents\visual studio 2013\Projects\CodeGenerate\CodeGenerate\obj\Debug\CodeGenerate.exe
+c:\users\xq\documents\visual studio 2013\Projects\CodeGenerate\CodeGenerate\obj\Debug\CodeGenerate.pdb
