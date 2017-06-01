@@ -10,6 +10,15 @@ namespace CodeGenerate
     /// </summary>   
     public partial class MyEvaluator
     {
+        #region 私有成员
+
+        /// <summary>   
+        /// 用于动态引用生成的类，执行其内部包含的可执行字符串   
+        /// </summary>   
+        private object mCompiled = null;
+
+        #endregion
+
         #region 构造函数
 
         /// <summary>   
@@ -20,19 +29,6 @@ namespace CodeGenerate
         /// </param>   
         public MyEvaluator(EvaluatorItem[] items)
         {
-            ConstructEvaluator(items);      //调用解析字符串构造函数进行解析   
-        }
-
-        /// <summary>   
-        /// 可执行串的构造函数   
-        /// </summary>   
-        /// <param name="returnType">返回值类型</param>   
-        /// <param name="expression">执行表达式</param>   
-        /// <param name="name">执行字符串名称</param>   
-        public MyEvaluator(Type returnType, string expression, string name)
-        {
-            //创建可执行字符串数组   
-            EvaluatorItem[] items = { new EvaluatorItem(returnType, expression, name) };
             ConstructEvaluator(items);      //调用解析字符串构造函数进行解析   
         }
 
@@ -102,7 +98,7 @@ namespace CodeGenerate
             }
 
             Assembly a = cr.CompiledAssembly;                       //获取编译器实例的程序集   
-            _Compiled = a.CreateInstance("CodeGenerate._Evaluator");     //通过程序集查找并声明 CodeGenerate._Evaluator 的实例   
+            mCompiled = a.CreateInstance("CodeGenerate._Evaluator");     //通过程序集查找并声明 CodeGenerate._Evaluator 的实例   
         }
 
         #endregion
@@ -176,23 +172,9 @@ namespace CodeGenerate
         /// <returns>执行结果</returns>   
         public object Evaluate(string name)
         {
-            MethodInfo mi = _Compiled.GetType().GetMethod(name);//获取 _Compiled 所属类型中名称为 name 的方法的引用   
-            return mi.Invoke(_Compiled, null);                  //执行 mi 所引用的方法   
+            MethodInfo mi = mCompiled.GetType().GetMethod(name);//获取 _Compiled 所属类型中名称为 name 的方法的引用   
+            return mi.Invoke(mCompiled, null);                  //执行 mi 所引用的方法   
         }
-
-        #endregion
-
-        #region 私有成员
-
-        /// <summary>   
-        /// 静态方法的执行字符串名称   
-        /// </summary>   
-        private const string staticMethodName = "__foo";
-
-        /// <summary>   
-        /// 用于动态引用生成的类，执行其内部包含的可执行字符串   
-        /// </summary>   
-        object _Compiled = null;
 
         #endregion
     }
