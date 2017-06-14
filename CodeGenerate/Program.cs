@@ -21,8 +21,10 @@ namespace CodeGenerate
                 new EvaluatorItem(typeof(string), "\"Hello\"+\"There\"", "GetString"),  
                 new EvaluatorItem(typeof(bool), "30 == 40", "GetBool"),  
                 new EvaluatorItem(typeof(object), "new DataSet()", "GetDataSet") 
-            };  
-            
+            };
+
+            Int32 i = 9;
+
             //构造对象，执行items
             MyEvaluator eval = new MyEvaluator(items);  
             Console.WriteLine("TestStatic0: {0}", eval.EvaluateInt("GetNumber"));  
